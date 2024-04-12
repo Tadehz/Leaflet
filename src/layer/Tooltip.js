@@ -417,7 +417,8 @@ Layer.include({
 			return;
 		}
 
-		// If the map is moving, we will show the tooltip after it's done.
+		// useless, also doesn't check if the mouse is STILL over the layer after moveend which in turn opens the tooltip too late, and with many layers this can make it look very bad
+		/* If the map is moving, we will show the tooltip after it's done.
 		if (this._map.dragging && this._map.dragging.moving()) {
 			if (e.type === 'add' && !this._moveEndOpensTooltip) {
 				this._moveEndOpensTooltip = true;
@@ -427,7 +428,7 @@ Layer.include({
 				});
 			}
 			return;
-		}
+		}*/
 
 		this._tooltip._source = e.layer || e.target;
 
